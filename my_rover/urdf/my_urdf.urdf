@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<robot name="physics">
+  <link name="box">
+    <visual>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link1.dae" />
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+     </visual>
+     <collision>
+       <geometry>
+         <mesh filename="package://myrobot2/meshes/link1.stl"/>
+       </geometry>
+       <origin xyz="0 0 0"/>
+     </collision>
+  </link>
+  <joint name="base_to_tail" type="continuous">
+    <parent link="box"/>
+    <child link="tail"/>
+    <origin xyz="0 -1 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+  <link name="tail">
+    <visual>
+      <geometry> 
+        <mesh filename="package://myrobot2/meshes/link2.dae" />
+      </geometry>
+      <origin xyz="0 -1 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link2.stl"/>
+      </geometry>
+    </collision> 
+  </link>
+  <link name="arm_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.dae"/>
+      </geometry>
+      <orgin rpy="-0.1 0 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.stl"/>
+      </geometry>
+      <orgin rpy="-0.1 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="base_to_arm" type="fixed">
+    <parent link="box"/>
+    <child link="arm_1"/>
+    <origin rpy="-0.1 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+ <link name="arm_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.dae"/>
+      </geometry>
+      <orgin rpy="-0.1 0 0" xyz="0 0 -1"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.stl"/>
+      </geometry>
+      <orgin rpy="-0.1 0 0" xyz="0 0 -1"/>
+    </collision>
+  </link>
+  <joint name="base_to_arm2" type="fixed">
+    <parent link="box"/>
+    <child link="arm_2"/>
+    <origin rpy="-0.1 0 0" xyz="0 0 -1"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+<!--
+ <link name="arm_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.dae"/>
+      </geometry>
+      <orgin rpy="0 1.5 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.stl"/>
+      </geometry>
+       <orgin rpy="0 1.5 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="base_to_arm3" type="fixed">
+    <parent link="box"/>
+    <child link="arm_3"/>
+    <origin rpy="0 1.5 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+ <link name="arm_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.dae"/>
+      </geometry>
+      <orgin rpy="0 -1.5 0" xyz="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://myrobot2/meshes/link3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_to_arm4" type="fixed">
+    <parent link="box"/>
+    <child link="arm_4"/>
+    <origin rpy="0 -1.5 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+-->
+</robot>
