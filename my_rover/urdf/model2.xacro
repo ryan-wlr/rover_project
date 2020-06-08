@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<!-- test -->
 <robot name="mars_rover" xmlns:xacro="http://ros.org/wiki/xacro">
     <!--link name="link" 
       <link name="solar_panel_collision">
